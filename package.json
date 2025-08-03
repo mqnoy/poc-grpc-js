@@ -1,0 +1,33 @@
+{
+  "name": "poc-grpc-js",
+  "version": "0.0.1",
+  "description": "poc grpc on javascript",
+  "main": "src/server.js",
+  "repository": {
+    "url": "https://github.com/mqnoy/poc-grpc-js.git"
+  },
+  "contributors": [
+    {
+      "name": "imza",
+      "url": "https://github.com/mqnoy"
+    }
+  ],
+  "scripts": {
+    "build:proto": "pbjs -t static-module -w commonjs -o src/compiled_proto.js src/versioning.proto",
+    "start:server": "node src/server.js",
+    "start:client": "node src/client.js"
+  },
+  "keywords": [],
+  "author": "imza",
+  "license": "MIT",
+  "packageManager": "pnpm@10.14.0",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.13.4",
+    "@grpc/proto-loader": "^0.8.0",
+    "google-protobuf": "^3.21.4",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "protobufjs-cli": "^1.1.3"
+  }
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package versioning;
+
+import "google/protobuf/wrappers.proto";
+
+service VersioningService {
+  rpc getVersionProperties (VersionPropertiesRequest) returns (VersionPropertiesResponse);
+}
+
+message VersionPropertiesRequest {
+  string dataVersion = 2;
+}
+
+message VersionPropertiesResponse {
+  message PROPERTIES {
+    int32 id = 1;
+    string version = 2;
+    google.protobuf.BoolValue show = 3;
+    google.protobuf.StringValue label = 4;
+    google.protobuf.Int32Value priority = 5;
+  }
+
+  repeated PROPERTIES result = 1;
+}
